@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+    - name: stg_dbt_model_1
+      description: "Sample stage dbt model"
+      columns:
+          - name: id
+            description: "primary key id"
+            tests:
+                - unique
+                - not_null
