@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+    - name: int_dbt_model_1
+      description: "sample intermediate dbt model"
+      columns:
+          - name: id
+            description: "primary key id"
+            tests:
+                - unique
+                - not_null

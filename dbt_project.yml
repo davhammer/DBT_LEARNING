@@ -1,8 +1,5 @@
 
-# Name your project! Project names should contain only lowercase characters
-# and underscores. A good package name should reflect your organization's
-# name or the intended use of these models
-name: 'dbt_learning_project'
+name: 'dbt_learn'
 version: '1.0.0'
 config-version: 2
 profile: 'default'
@@ -18,11 +15,23 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+seeds:
+  dbt_project_evaluator:
+    +schema: project_evaluator
+  dbt_learn:
+    seeds:
+      +schema: seeds
+
 models:
-  dbt_learning_project:
+  dbt_project_evaluator:
+    +schema: project_evaluator
+  dbt_learn:
     staging:
-      +schema: staging
+      +schema: stg
       +materialized: view
+    intermediate:
+      +schema: int
+      +materialized: table
     marts:
-      +schema: marts
+      +schema: mrt
       +materialized: table
