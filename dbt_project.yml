@@ -16,11 +16,9 @@ clean-targets:
   - "dbt_packages"
 
 seeds:
+  +schema: seeds
   dbt_project_evaluator:
     +schema: project_evaluator
-  dbt_learn:
-    seeds:
-      +schema: seeds
 
 models:
   dbt_project_evaluator:
